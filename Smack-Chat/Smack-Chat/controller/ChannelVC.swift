@@ -15,6 +15,6 @@ class ChannelVC: UIViewController {
 self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
     }
 
-
+    @IBAction func UnWindFromLoginVC (Segue : UIStoryboardSegue){}
 
 }
