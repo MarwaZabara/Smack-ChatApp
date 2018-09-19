@@ -16,5 +16,6 @@ self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 6
     }
 
     @IBAction func UnWindFromLoginVC (Segue : UIStoryboardSegue){}
+    @IBAction func PrepareForUnWind(Segue : UIStoryboardSegue){}
 
 }
