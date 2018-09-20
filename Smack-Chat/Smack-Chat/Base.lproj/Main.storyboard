@@ -250,6 +250,7 @@
                                     <color key="titleColor" red="0.25882352939999997" green="0.32156862749999998" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="GenerateBGPressed:" destination="k0B-pO-Vff" eventType="touchUpInside" id="igN-dF-vp6"/>
                                     <action selector="SignUpBtnPressed:" destination="ZaG-1W-qMR" eventType="touchUpInside" id="T0c-Mj-NWw"/>
                                 </connections>
                             </button>
@@ -264,6 +265,9 @@
                                 <state key="normal" title="Create account">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="CreateAccountPressed:" destination="k0B-pO-Vff" eventType="touchUpInside" id="F1e-54-rS0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1l-BQ-fH9">
                                 <rect key="frame" x="335" y="30" width="30" height="30"/>
@@ -358,6 +362,7 @@
                                     <color key="titleColor" red="0.25882352939999997" green="0.32156862749999998" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="ChooseAvatarPressed:" destination="k0B-pO-Vff" eventType="touchUpInside" id="w0k-AZ-FmZ"/>
                                     <action selector="SignUpBtnPressed:" destination="ZaG-1W-qMR" eventType="touchUpInside" id="Nqm-MA-R1t"/>
                                 </connections>
                             </button>
@@ -383,6 +388,10 @@
                         <viewLayoutGuide key="safeArea" id="rzl-BB-zX6"/>
                     </view>
                     <connections>
+                        <outlet property="EmailTxt" destination="thg-uv-BKc" id="zyv-ag-0Ey"/>
+                        <outlet property="PswrdTxt" destination="Zkj-Uq-Fdo" id="fqe-wM-jsY"/>
+                        <outlet property="UserImg" destination="2Ui-uX-9fX" id="eQZ-fY-Caw"/>
+                        <outlet property="UsernameTxt" destination="xDv-d3-X4I" id="Dj0-Ae-RdO"/>
                         <segue destination="h3p-bH-q4S" kind="unwind" identifier="UnWindToChannel" unwindAction="PrepareForUnWindWithSegue:" id="WF7-z4-eZV"/>
                     </connections>
                 </viewController>
