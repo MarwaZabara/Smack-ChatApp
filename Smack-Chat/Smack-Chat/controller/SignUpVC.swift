@@ -40,6 +40,11 @@ class SignUpVC: UIViewController {
         AuthService.instance.RegisterUser(Email: Email, Password: Password) { (success) in
             if success {
                 print("Yeeah succeeded!")
+                AuthService.instance.LoginUser(Email: Email,Password: Password){(sucess) in
+                    if (sucess){
+                        print("Successfuly loggedin!!",AuthService.instance.AuthToken)
+                    }
+                }
             }
         }
         
