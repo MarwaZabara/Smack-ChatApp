@@ -57,6 +57,7 @@ class AuthService {
 
         Alamofire.request(URLRegister, method: .post, parameters: Body, encoding: JSONEncoding.default, headers: Header).responseString { (response) in
             if response.result.error == nil {
+                print("registration done")
                 Completion(true)
             }
             else {
@@ -69,7 +70,7 @@ class AuthService {
     func LoginUser (Email:String,Password:String,Completion: @escaping CompletionHandler){
         let LowerCaseEmail = Email.lowercased()
         let Header = [
-            "content-type": "application/json; charset=utf-8"
+            "Content-Type": "application/json; charset=utf-8"
         ]
         
         let Body :[String:Any] = [
@@ -106,6 +107,40 @@ class AuthService {
         }
         
     }
+    func AddUser (Name:String,Email:String,AvatarName:String,AvatarColor:String,Completion: @escaping CompletionHandler){
+        let LowerCaseEmail = Email.lowercased()
+        let Header = [
+            "Authorization":"Bearer \(AuthService.instance.AuthToken)","Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        let Body :[String:Any] = [
+            "name" : Name,
+            "email" : LowerCaseEmail,
+            "avatarName" : AvatarName,
+            "avatarColor" : AvatarColor
+        ]
+        
+         Alamofire.request(URLAdd, method: .post, parameters: Body, encoding: JSONEncoding.default, headers: Header).responseJSON { (response) in
+            if response.result.error == nil
+            {
+                guard let data = response.data
+                    else{return}
+                do{
+                let json = try JSON(data:data)
+                DataService.instance.SetUserData(id:json["_id"].stringValue,name:json["name"].stringValue,email:json["email"].stringValue, avatarname:json["avatarName"].stringValue,avatarColor:json["avatarColor"].stringValue)
+              Completion(true)
+                }
+                catch {print("error")}
+            }
+            
+            else{
+                Completion(false)
+                debugPrint(response.result.error as Any)}
+        }
+        
+    }
     
 }
+    
+
 

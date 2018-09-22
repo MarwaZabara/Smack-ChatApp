@@ -14,7 +14,7 @@ typealias CompletionHandler = (_ Success:Bool) ->()
 let BaseURL = "https://chatty-chatapp.herokuapp.com/v1/"
 let URLRegister = "\(BaseURL)account/register"
 let URLLogin = "\(BaseURL)account/login"
-
+let URLAdd = "\(BaseURL)user/add"
 //Segues
 let To_Signup = "ToSignUp"
 let UnWind = "UnWindToChannel"

@@ -298,7 +298,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GP1-NJ-vlt">
                                 <rect key="frame" x="62.5" y="146.5" width="250" height="136"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDv-d3-X4I">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDv-d3-X4I" userLabel="UsernameTxt">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="8Et-Tt-hMn"/>
@@ -316,7 +316,7 @@
                                             <constraint firstAttribute="height" constant="2" id="nFp-OJ-Iv1"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thg-uv-BKc">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thg-uv-BKc" userLabel="EmailTxt">
                                         <rect key="frame" x="0.0" y="52" width="250" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="9PM-eE-jG5"/>
@@ -403,10 +403,10 @@
                         <viewLayoutGuide key="safeArea" id="rzl-BB-zX6"/>
                     </view>
                     <connections>
-                        <outlet property="EmailTxt" destination="thg-uv-BKc" id="zyv-ag-0Ey"/>
+                        <outlet property="EmailTxt" destination="thg-uv-BKc" id="vra-AU-Cfo"/>
                         <outlet property="PswrdTxt" destination="Zkj-Uq-Fdo" id="fqe-wM-jsY"/>
                         <outlet property="UserImg" destination="2Ui-uX-9fX" id="eQZ-fY-Caw"/>
-                        <outlet property="UsernameTxt" destination="xDv-d3-X4I" id="Dj0-Ae-RdO"/>
+                        <outlet property="UsernameTxt" destination="xDv-d3-X4I" id="lLn-xB-uY4"/>
                         <segue destination="h3p-bH-q4S" kind="unwind" identifier="UnWindToChannel" unwindAction="PrepareForUnWindWithSegue:" id="WF7-z4-eZV"/>
                     </connections>
                 </viewController>
