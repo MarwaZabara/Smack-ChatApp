@@ -58,9 +58,13 @@ class AvatarPickerVC: UIViewController,UICollectionViewDelegate,UICollectionView
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    
     @IBAction func BackPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
     
     @IBAction func SegmentChanged(_ sender: Any) {
         if Choice.selectedSegmentIndex == 0{
@@ -71,6 +75,8 @@ class AvatarPickerVC: UIViewController,UICollectionViewDelegate,UICollectionView
         }
         CollectionView.reloadData()
     }
+    
+    
     
 
 }

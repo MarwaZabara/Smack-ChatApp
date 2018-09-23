@@ -47,7 +47,7 @@
                                     <segue destination="ZaG-1W-qMR" kind="show" identifier="ToLogin" id="qAK-1T-5pD"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="vFK-5a-7ez">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="vFK-5a-7ez" customClass="CircleImg" customModule="Smack_Chat" customModuleProvider="target">
                                 <rect key="frame" x="20" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="G4b-xu-iUQ"/>
@@ -354,7 +354,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="2Ui-uX-9fX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="2Ui-uX-9fX" customClass="CircleImg" customModule="Smack_Chat" customModuleProvider="target">
                                 <rect key="frame" x="137" y="322.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="OPI-YO-BSe"/>
@@ -367,7 +367,7 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQ0-Wj-vLa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQ0-Wj-vLa" customClass="Circle">
                                 <rect key="frame" x="137" y="322" width="100" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="Ml6-Mo-3Ag"/>
@@ -381,6 +381,10 @@
                                     <action selector="SignUpBtnPressed:" destination="ZaG-1W-qMR" eventType="touchUpInside" id="Nqm-MA-R1t"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="d46-NJ-MrY">
+                                <rect key="frame" x="169" y="280.5" width="37" height="37"/>
+                                <color key="color" red="0.2156862745" green="0.37254901959999998" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -394,17 +398,20 @@
                             <constraint firstItem="k6E-Qq-2UA" firstAttribute="centerX" secondItem="wV6-gX-h17" secondAttribute="centerX" id="WB7-cv-XpK"/>
                             <constraint firstItem="rzl-BB-zX6" firstAttribute="trailing" secondItem="u1l-BQ-fH9" secondAttribute="trailing" constant="10" id="dDs-8j-l7F"/>
                             <constraint firstItem="MQ0-Wj-vLa" firstAttribute="width" secondItem="2Ui-uX-9fX" secondAttribute="width" id="djo-HM-3Om"/>
+                            <constraint firstItem="d46-NJ-MrY" firstAttribute="centerX" secondItem="wV6-gX-h17" secondAttribute="centerX" id="fKg-Dg-hU1"/>
                             <constraint firstItem="r1h-mT-470" firstAttribute="top" secondItem="2Ui-uX-9fX" secondAttribute="bottom" constant="30" id="fwV-cK-fJn"/>
                             <constraint firstItem="GP1-NJ-vlt" firstAttribute="top" secondItem="RYg-BM-j23" secondAttribute="bottom" constant="40" id="k96-RF-a2x"/>
                             <constraint firstItem="u1l-BQ-fH9" firstAttribute="top" secondItem="rzl-BB-zX6" secondAttribute="top" constant="10" id="lJc-kz-vdc"/>
                             <constraint firstItem="RYg-BM-j23" firstAttribute="centerX" secondItem="wV6-gX-h17" secondAttribute="centerX" id="tGt-bw-SwH"/>
                             <constraint firstItem="r1h-mT-470" firstAttribute="centerX" secondItem="wV6-gX-h17" secondAttribute="centerX" id="ukX-Ys-lkW"/>
+                            <constraint firstItem="d46-NJ-MrY" firstAttribute="centerY" secondItem="wV6-gX-h17" secondAttribute="centerY" constant="-35" id="xfX-Qu-yvN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rzl-BB-zX6"/>
                     </view>
                     <connections>
                         <outlet property="EmailTxt" destination="thg-uv-BKc" id="vra-AU-Cfo"/>
                         <outlet property="PswrdTxt" destination="Zkj-Uq-Fdo" id="fqe-wM-jsY"/>
+                        <outlet property="Spinner" destination="d46-NJ-MrY" id="SOf-Dy-Slx"/>
                         <outlet property="UserImg" destination="2Ui-uX-9fX" id="eQZ-fY-Caw"/>
                         <outlet property="UsernameTxt" destination="xDv-d3-X4I" id="lLn-xB-uY4"/>
                         <segue destination="h3p-bH-q4S" kind="unwind" identifier="UnWindToChannel" unwindAction="PrepareForUnWindWithSegue:" id="WF7-z4-eZV"/>

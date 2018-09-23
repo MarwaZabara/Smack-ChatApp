@@ -17,21 +17,28 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var UsernameTxt: UITextField!
     @IBOutlet weak var PswrdTxt: UITextField!
     @IBOutlet weak var UserImg: UIImageView!
+    @IBOutlet weak var Spinner: UIActivityIndicatorView!
     
     //Variables
     var AvatarName = "profileDefault"
     var AvatarColor = "[0.5,0.5,0.5,1]"
+    var BGColor : UIColor?
     
     override func viewDidAppear(_ animated: Bool) {
         if DataService.instance.avatarName != ""{
         AvatarName = DataService.instance.avatarName
         UserImg.image = UIImage(named: AvatarName)
-        }}
+        }
+        if AvatarName.contains("light"),BGColor == nil{
+            UserImg.backgroundColor = UIColor.lightGray
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        SetupView()
     }
 
     @IBAction func ChooseAvatarPressed(_ sender: Any) {
@@ -40,11 +47,18 @@ class SignUpVC: UIViewController {
     
     
     @IBAction func GenerateBGPressed(_ sender: Any) {
-        
+        let r = CGFloat(arc4random_uniform(255)) / 255
+        let g = CGFloat(arc4random_uniform(255)) / 255
+        let b = CGFloat(arc4random_uniform(255)) / 255
+        UIView.animate(withDuration: 0.3){
+            self.UserImg.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)}
+        //DataService.instance.avatarColor = UIColor(red: r, green: g, blue: b, alpha: 1)
     }
     
     
     @IBAction func CreateAccountPressed(_ sender: Any) {
+        Spinner.isHidden = false
+        Spinner.startAnimating()
         guard let Username = UsernameTxt.text , Username != "" else {return}
         print("username is \(Username)\n")
         guard let Email = EmailTxt.text , EmailTxt.text != "" else {return}
@@ -62,8 +76,10 @@ class SignUpVC: UIViewController {
                         AuthService.instance.AddUser(Name: Username, Email: Email, AvatarName: self.AvatarName, AvatarColor: self.AvatarColor) {
                             (success) in
                             if(sucess){
-                            print("here")
-                            print("ahoo\(DataService.instance.name,DataService.instance.avatarName)")
+//                            print("here")
+//                            print("ahoo\(DataService.instance.name,DataService.instance.avatarName)")
+                                self.Spinner.stopAnimating()
+                                self.Spinner.isHidden = true
                             self.performSegue(withIdentifier:UnWind, sender: nil)
                             
                             
@@ -81,7 +97,20 @@ class SignUpVC: UIViewController {
         performSegue(withIdentifier: UnWind, sender: nil)
     }
     
-
+    
+    func SetupView (){
+        Spinner.isHidden = true
+        UsernameTxt.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedStringKey.foregroundColor:PurplePlaceHolder])
+        PswrdTxt.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor:PurplePlaceHolder])
+        EmailTxt.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.foregroundColor:PurplePlaceHolder])
+        let Tap = UITapGestureRecognizer(target: self, action: #selector(HandleTap))
+        view.addGestureRecognizer(Tap)
+        
+        
+    }
+    @objc func HandleTap(){
+        view.endEditing(true)
+    }
 }
 
 

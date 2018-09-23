@@ -20,6 +20,10 @@ let To_Signup = "ToSignUp"
 let UnWind = "UnWindToChannel"
 let ToAvatarPicker = "ToAvatarPicker"
 
+//Colors
+let PurplePlaceHolder = #colorLiteral(red: 0.5714172125, green: 0.3195958138, blue: 0.7234756351, alpha: 0.5)
+
+
 
 //users defaults
 let TokenKey = "token"
