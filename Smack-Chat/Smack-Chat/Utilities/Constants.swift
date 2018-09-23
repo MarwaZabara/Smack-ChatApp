@@ -18,6 +18,7 @@ let URLAdd = "\(BaseURL)user/add"
 //Segues
 let To_Signup = "ToSignUp"
 let UnWind = "UnWindToChannel"
+let ToAvatarPicker = "ToAvatarPicker"
 
 
 //users defaults

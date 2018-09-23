@@ -31,7 +31,7 @@ class SignUpVC: UIViewController {
     }
 
     @IBAction func ChooseAvatarPressed(_ sender: Any) {
-        
+        performSegue(withIdentifier:ToAvatarPicker, sender: nil)
     }
     
     
