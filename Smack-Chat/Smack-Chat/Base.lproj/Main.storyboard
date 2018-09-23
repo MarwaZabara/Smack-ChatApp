@@ -265,7 +265,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6E-Qq-2UA" customClass="RoundedButton" customModule="Smack_Chat" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="567" width="250" height="40"/>
+                                <rect key="frame" x="62.5" y="597" width="250" height="40"/>
                                 <color key="backgroundColor" red="0.2156862745" green="0.37254901959999998" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="99Q-ub-Cax"/>
@@ -385,7 +385,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RYg-BM-j23" firstAttribute="top" secondItem="rzl-BB-zX6" secondAttribute="top" constant="60" id="360-1i-thM"/>
-                            <constraint firstItem="rzl-BB-zX6" firstAttribute="bottom" secondItem="k6E-Qq-2UA" secondAttribute="bottom" constant="60" id="BH7-aH-DBT"/>
+                            <constraint firstItem="rzl-BB-zX6" firstAttribute="bottom" secondItem="k6E-Qq-2UA" secondAttribute="bottom" constant="30" id="BH7-aH-DBT"/>
                             <constraint firstItem="2Ui-uX-9fX" firstAttribute="top" secondItem="GP1-NJ-vlt" secondAttribute="bottom" constant="40" id="D3K-Z3-FX9"/>
                             <constraint firstItem="2Ui-uX-9fX" firstAttribute="centerX" secondItem="wV6-gX-h17" secondAttribute="centerX" id="G0u-XI-D9Y"/>
                             <constraint firstItem="GP1-NJ-vlt" firstAttribute="centerX" secondItem="wV6-gX-h17" secondAttribute="centerX" id="Oxx-Fh-xzH"/>
@@ -499,6 +499,7 @@
                         <viewLayoutGuide key="safeArea" id="aBO-FS-6cs"/>
                     </view>
                     <connections>
+                        <outlet property="Choice" destination="9eE-MI-lY6" id="eqO-lM-aID"/>
                         <outlet property="CollectionView" destination="cXJ-sg-8gQ" id="oBF-9k-6La"/>
                     </connections>
                 </viewController>

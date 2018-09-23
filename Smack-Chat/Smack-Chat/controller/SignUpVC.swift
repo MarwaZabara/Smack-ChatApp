@@ -22,7 +22,11 @@ class SignUpVC: UIViewController {
     var AvatarName = "profileDefault"
     var AvatarColor = "[0.5,0.5,0.5,1]"
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        if DataService.instance.avatarName != ""{
+        AvatarName = DataService.instance.avatarName
+        UserImg.image = UIImage(named: AvatarName)
+        }}
     
     override func viewDidLoad() {
         super.viewDidLoad()
