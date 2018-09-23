@@ -29,4 +29,39 @@ class DataService {
     func SetAvatarName(Name:String){
         self.avatarName = Name
     }
+    
+    
+    func ReturnUIColor(Components:String)-> UIColor{
+        let scanner = Scanner(string: Components)
+        let skip = CharacterSet(charactersIn: "[], ")
+        let sepearator = CharacterSet(charactersIn: ",")
+        let defaultColor = UIColor.lightGray
+        scanner.charactersToBeSkipped =  skip
+        var r,g,b,a : NSString?
+       scanner.scanUpToCharacters(from: sepearator, into: &r)
+       scanner.scanUpToCharacters(from: sepearator, into: &g)
+       scanner.scanUpToCharacters(from: sepearator, into: &b)
+       scanner.scanUpToCharacters(from: sepearator, into: &a)
+        
+        guard let rUnWrapped = r  else{return defaultColor}
+        guard let gUnWrapped = g  else{return defaultColor}
+        guard let bUnWrapped = b  else{return defaultColor}
+        guard let aUnWrapped = a  else{return defaultColor}
+        
+        let rfloat = CGFloat(rUnWrapped.doubleValue)
+        let gfloat = CGFloat(gUnWrapped.doubleValue)
+        let bfloat = CGFloat(bUnWrapped.doubleValue)
+        let afloat = CGFloat(aUnWrapped.doubleValue)
+        
+        let newUIColor = UIColor(red: rfloat, green: gfloat, blue: bfloat, alpha: afloat)
+        return newUIColor
+        
+    }
+    
+    
+    
+    
+    
+    
+    
 }

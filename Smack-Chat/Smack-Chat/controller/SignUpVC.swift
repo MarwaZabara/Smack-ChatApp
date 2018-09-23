@@ -50,10 +50,14 @@ class SignUpVC: UIViewController {
         let r = CGFloat(arc4random_uniform(255)) / 255
         let g = CGFloat(arc4random_uniform(255)) / 255
         let b = CGFloat(arc4random_uniform(255)) / 255
-        UIView.animate(withDuration: 0.3){
-            self.UserImg.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)}
-        //DataService.instance.avatarColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+       // UIView.animate(withDuration: 0.3)
+        BGColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        AvatarColor = "[\(r),\(g),\(b),1]"
+        self.UserImg.backgroundColor = BGColor
+        
     }
+        //DataService.SetAvatarColor(<#T##DataService#>)= UIColor(red: r, green: g, blue: b, alpha: 1)
+    
     
     
     @IBAction func CreateAccountPressed(_ sender: Any) {
@@ -80,8 +84,9 @@ class SignUpVC: UIViewController {
 //                            print("ahoo\(DataService.instance.name,DataService.instance.avatarName)")
                                 self.Spinner.stopAnimating()
                                 self.Spinner.isHidden = true
-                            self.performSegue(withIdentifier:UnWind, sender: nil)
-                            
+                                self.performSegue(withIdentifier:UnWind, sender: nil)
+                                NotificationCenter.default.post(name: Notif_DataChanged , object: nil)
+
                             
                             }else {print("error")}
                             }

@@ -24,6 +24,9 @@ let ToAvatarPicker = "ToAvatarPicker"
 let PurplePlaceHolder = #colorLiteral(red: 0.5714172125, green: 0.3195958138, blue: 0.7234756351, alpha: 0.5)
 
 
+//Notifications
+let Notif_DataChanged = Notification.Name("NotifDataDidChange")
+
 
 //users defaults
 let TokenKey = "token"
