@@ -223,13 +223,19 @@
                                     <action selector="SignUpBtnPressed:" destination="ZaG-1W-qMR" eventType="touchUpInside" id="yWj-qZ-oGA"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mBt-gC-5fF">
+                                <rect key="frame" x="169" y="225" width="37" height="37"/>
+                                <color key="color" red="0.20000000000000001" green="0.23921568630000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mBt-gC-5fF" firstAttribute="centerX" secondItem="On9-Nq-XxG" secondAttribute="centerX" id="0jB-EQ-feC"/>
                             <constraint firstItem="eia-6P-85p" firstAttribute="centerX" secondItem="On9-Nq-XxG" secondAttribute="centerX" id="3Wq-d5-ZcM"/>
                             <constraint firstItem="82T-af-kXp" firstAttribute="centerX" secondItem="On9-Nq-XxG" secondAttribute="centerX" id="3sJ-lh-iaL"/>
                             <constraint firstItem="FER-zX-cqr" firstAttribute="top" secondItem="82T-af-kXp" secondAttribute="bottom" constant="40" id="3ya-79-iFs"/>
                             <constraint firstItem="UPZ-Vg-4vc" firstAttribute="top" secondItem="FER-zX-cqr" secondAttribute="bottom" constant="8" id="9tJ-RQ-6BW"/>
+                            <constraint firstItem="mBt-gC-5fF" firstAttribute="centerY" secondItem="On9-Nq-XxG" secondAttribute="centerY" constant="-90" id="PQe-KT-gM9"/>
                             <constraint firstItem="UPZ-Vg-4vc" firstAttribute="centerX" secondItem="On9-Nq-XxG" secondAttribute="centerX" id="RxY-MJ-RuQ"/>
                             <constraint firstItem="FER-zX-cqr" firstAttribute="centerX" secondItem="On9-Nq-XxG" secondAttribute="centerX" id="bSk-1P-Njl"/>
                             <constraint firstItem="82T-af-kXp" firstAttribute="top" secondItem="eia-6P-85p" secondAttribute="bottom" constant="60" id="ksh-Pa-qfr"/>
@@ -240,8 +246,9 @@
                         <viewLayoutGuide key="safeArea" id="oe3-WW-zwk"/>
                     </view>
                     <connections>
-                        <outlet property="Email" destination="FHG-7b-eNX" id="XeL-gF-zJj"/>
-                        <outlet property="Password" destination="mTJ-vw-iJb" id="Li3-7f-kdi"/>
+                        <outlet property="EmailTxt" destination="FHG-7b-eNX" id="LRH-rM-2pO"/>
+                        <outlet property="PasswordTxt" destination="mTJ-vw-iJb" id="FUh-eA-Flq"/>
+                        <outlet property="Spinner" destination="mBt-gC-5fF" id="2yX-2F-NEa"/>
                         <segue destination="k0B-pO-Vff" kind="show" identifier="ToSignUp" id="l3O-Us-bsU"/>
                     </connections>
                 </viewController>

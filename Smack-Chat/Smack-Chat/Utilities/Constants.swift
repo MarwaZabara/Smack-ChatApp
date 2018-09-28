@@ -15,6 +15,8 @@ let BaseURL = "https://chatty-chatapp.herokuapp.com/v1/"
 let URLRegister = "\(BaseURL)account/register"
 let URLLogin = "\(BaseURL)account/login"
 let URLAdd = "\(BaseURL)user/add"
+let URL_FIND_BY_EMAIL = "\(BaseURL)user/byEmail/"
+
 //Segues
 let To_Signup = "ToSignUp"
 let UnWind = "UnWindToChannel"
@@ -32,3 +34,13 @@ let Notif_DataChanged = Notification.Name("NotifDataDidChange")
 let TokenKey = "token"
 let LoggedInKey = "LoggedIn"
 let UserEmail = "UserEmail"
+
+
+
+//HEADERS
+let Header = [
+    "Content-Type": "application/json; charset=utf-8"
+]
+let BEARER_Header = [
+    "Authorization":"Bearer \(AuthService.instance.AuthToken)","Content-Type": "application/json; charset=utf-8"
+]

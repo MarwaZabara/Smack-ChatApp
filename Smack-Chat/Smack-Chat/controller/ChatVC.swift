@@ -18,6 +18,10 @@ class ChatVC: UIViewController {
         MenuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(revealViewController().tapGestureRecognizer())
+        if AuthService.instance.IsLoggedIn{
+        AuthService.instance.FindUserByEmail { (success) in
+            NotificationCenter.default.post(name: Notif_DataChanged, object: nil)
+            }}
     }
 
     
