@@ -50,13 +50,14 @@ class SignUpVC: UIViewController {
         let r = CGFloat(arc4random_uniform(255)) / 255
         let g = CGFloat(arc4random_uniform(255)) / 255
         let b = CGFloat(arc4random_uniform(255)) / 255
-       // UIView.animate(withDuration: 0.3)
         BGColor = UIColor(red: r, green: g, blue: b, alpha: 1)
         AvatarColor = "[\(r),\(g),\(b),1]"
-        self.UserImg.backgroundColor = BGColor
+        UIView.animate(withDuration:0.3){
+        self.UserImg.backgroundColor = self.BGColor
+        }
         
     }
-        //DataService.SetAvatarColor(<#T##DataService#>)= UIColor(red: r, green: g, blue: b, alpha: 1)
+    
     
     
     
@@ -81,7 +82,8 @@ class SignUpVC: UIViewController {
                             (success) in
                             if(sucess){
 //                            print("here")
-//                            print("ahoo\(DataService.instance.name,DataService.instance.avatarName)")
+                                //                            print("ahoo\(DataService.instance.name,DataService.instance.avatarName)")
+                                DataService.instance.SetUserData(id: "", name:Username, email:Email, avatarname: self.AvatarName, avatarColor: self.AvatarColor)
                                 self.Spinner.stopAnimating()
                                 self.Spinner.isHidden = true
                                 self.performSegue(withIdentifier:UnWind, sender: nil)

@@ -21,6 +21,19 @@ class ChannelVC: UIViewController {
     @IBAction func UnWindFromLoginVC (Segue : UIStoryboardSegue){}
     @IBAction func PrepareForUnWind(Segue : UIStoryboardSegue){}
     
+    @IBAction func LoginPressed(_ sender: Any) {
+        //Show ProfileVC
+        if AuthService.instance.IsLoggedIn == true {
+            let Profile = ProfileVC()
+            Profile.modalPresentationStyle = .custom
+            present(Profile, animated: true, completion: nil)
+    
+        }
+        else {
+            //Show LoginVC
+            performSegue(withIdentifier: "ToLogin", sender:nil)
+        }
+    }
     @objc func DataChanged(){
         if AuthService.instance.IsLoggedIn{
         Username.setTitle(DataService.instance.name, for: .normal)

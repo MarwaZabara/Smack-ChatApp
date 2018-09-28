@@ -44,6 +44,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="LoginPressed:" destination="BYK-I2-jG9" eventType="touchUpInside" id="ZVe-FU-5DF"/>
                                     <segue destination="ZaG-1W-qMR" kind="show" identifier="ToLogin" id="qAK-1T-5pD"/>
                                 </connections>
                             </button>
