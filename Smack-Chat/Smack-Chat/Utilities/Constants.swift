@@ -16,6 +16,7 @@ let URLRegister = "\(BaseURL)account/register"
 let URLLogin = "\(BaseURL)account/login"
 let URLAdd = "\(BaseURL)user/add"
 let URL_FIND_BY_EMAIL = "\(BaseURL)user/byEmail/"
+let GET_CHANNELS = "\(BaseURL)channel/"
 
 //Segues
 let To_Signup = "ToSignUp"

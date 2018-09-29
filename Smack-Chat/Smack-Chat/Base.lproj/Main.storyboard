@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,10 +75,33 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HdE-pZ-GUB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HdE-pZ-GUB">
                                 <rect key="frame" x="0.0" y="144" width="375" height="413"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChannelCell" rowHeight="53" id="oo7-PJ-elA">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oo7-PJ-elA" id="BHX-g9-Vqz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQi-V9-brj">
+                                                    <rect key="frame" x="25" y="14" width="101" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GQi-V9-brj" secondAttribute="bottom" constant="3" id="46c-NB-9br"/>
+                                                <constraint firstItem="GQi-V9-brj" firstAttribute="leading" secondItem="BHX-g9-Vqz" secondAttribute="leadingMargin" constant="10" id="Ck3-Y0-isr"/>
+                                                <constraint firstItem="GQi-V9-brj" firstAttribute="top" secondItem="BHX-g9-Vqz" secondAttribute="topMargin" constant="3" id="xWy-Xj-TWu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTa-3u-Aff">
                                 <rect key="frame" x="225" y="68.5" width="60" height="60"/>
@@ -86,6 +110,9 @@
                                     <constraint firstAttribute="height" constant="60" id="hmD-fs-MlC"/>
                                 </constraints>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="AddChannelPressed:" destination="BYK-I2-jG9" eventType="touchUpInside" id="Y7F-pY-fcg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,6 +135,7 @@
                         <viewLayoutGuide key="safeArea" id="s6C-5D-CZx"/>
                     </view>
                     <connections>
+                        <outlet property="ChannelTableView" destination="HdE-pZ-GUB" id="nvk-N0-Ewc"/>
                         <outlet property="UserImg" destination="vFK-5a-7ez" id="ybx-jb-3Gi"/>
                         <outlet property="Username" destination="Imx-f6-CIh" id="Ein-kV-qui"/>
                     </connections>

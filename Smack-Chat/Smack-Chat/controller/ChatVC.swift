@@ -22,6 +22,9 @@ class ChatVC: UIViewController {
         AuthService.instance.FindUserByEmail { (success) in
             NotificationCenter.default.post(name: Notif_DataChanged, object: nil)
             }}
+        Messageservice.instance.FindAllChannels { (success) in
+        
+        }
     }
 
     
