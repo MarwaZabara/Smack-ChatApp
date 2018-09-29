@@ -25,7 +25,16 @@ class CreateChannelVC: UIViewController {
     @IBAction func CloseBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-   
+    @IBAction func CreateChannelPressed(_ sender: Any) {
+        guard let name = NameTxt.text , name != "" else {return}
+        guard let desc = NameTxt.text , desc != "" else {return}
+        SocketService.instance.AddChannel(ChannelName: name, ChannelDescription: desc) { (sucess) in
+            if (sucess){
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
     func SetupView (){
         let TouchClose = UITapGestureRecognizer(target: self, action: #selector(TapClose))
         BgView.addGestureRecognizer(TouchClose)

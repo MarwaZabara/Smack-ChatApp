@@ -96,6 +96,9 @@
                             <state key="normal" title="Create">
                                 <color key="titleColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="CreateChannelPressed:" destination="-1" eventType="touchUpInside" id="7rv-ba-D8F"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.87896573604060912" green="0.87476273496483492" blue="0.83933802299905891" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
